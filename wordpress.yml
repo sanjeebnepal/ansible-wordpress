@@ -46,7 +46,6 @@
         name: php-mysqlnd
         state: present
 
-
     - name: Add ec2-user to apache group
       user:
         name: ec2-user
@@ -93,8 +92,6 @@
         path: "{{ item.path }}"
         mode: "0664"
       with_items: "{{ files_to_set_permissions.files }}"
-
-
 
     - name: Install pymysql module for Python 3
       package:
@@ -178,8 +175,6 @@
         regexp: "password_here"
         replace: "sanjeebpass"
 
-
-
     - name: Set directory permissions
       file:
         path: /var/www
@@ -212,8 +207,6 @@
         path: "{{ item.path }}"
         mode: "0664"
       with_items: "{{ files_to_set_permissions.files }}"
-
-
 
     - name: Restart HTTPD service
       service:
